@@ -137,8 +137,8 @@
 	})
 ```
 2. URL Error
-- URL 이 필요로 하는 query를 모두 입력받지 못했을 경우,
-  response의 body값을 받지만 error발생 -> url 직접 입력해본 후 error 처리
+- URL 이 필요로 하는 query를 모두 입력받지 못했을 경우,   
+  response의 body값을 받지만 error발생 -> url 직접 입력해본 후 error 처리   
 -(ex)
 ```javascript
     request({ url:geocode_url, json:true },(error,response)=> {
@@ -155,46 +155,44 @@
 - 콜백함수는 함수(A)의 인자로 또 다른 함수(B)를 전달하여 , A함수 내부에서 B함수를 실행시키는 것.  <br>
 
  ```javascript
-const names=['Jean','Jen','Jessy']
-const shortNames = names.filter( (name)=> name.length <=4  )
-```
-	- ex1)  예시에서 filter함수 내에 익명의 함수를 넣어 names의 각 요소중 길이가 4보다 작거나 같은 요소를 return 하도록 함.
+	const names=['Jean','Jen','Jessy']
+	const shortNames = names.filter( (name)=> name.length <=4  )
+  ```
+   - ex1)  예시에서 filter함수 내에 익명의 함수를 넣어 names의 각 요소중 길이가 4보다 작거나 같은 요소를 return 하도록 함.
 
  ```javascript
-setTimeout(()=>{
+	setTimeout(()=>{
  	console.log('Two seconds are up') 
 	//setTimeout()안의 function 또한 callback
- },2000)
-```
-	- ex2) setTimeout functon 내에 'Two seconds are up' 출력함수를 넣어
-	setTimeout 함수 실행시 호출되도록 함.
+ 	},2000)
+ ```
+   - ex2) setTimeout functon 내에 'Two seconds are up' 출력함수를 넣어 setTimeout 함수 실행시 호출되도록 함.
 	- setTimeout : call back function 이자 asychronous
-- call back 함수는 비동기식 개발의 핵심이다
+- call back 함수는 비동기식 개발의 핵심이다.
 - call back 함수는 어떻게 사용하는가?
-```javascript
-const geocode = (address, callback) => {
- 	setTimeout(() => {
- 		const data = {
- 		latitude: 0,
- 		longitude: 0
- 		}
+	```javascript
+	const geocode = (address, callback) => {
+ 		setTimeout(() => {
+ 			const data = {
+ 			latitude: 0,
+ 			longitude: 0
+ 			}
  		callback(data) // callback은 1개의 argument
- 	}, 2000)
-}
-geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
- console.log(data) 
-})
-```
+ 		}, 2000)
+	}
+	geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
+ 	console.log(data) 
+	})
+	```
 	=> **geocode** 함수는 address 와 callback function을 인자로 가지고,
 	 callback function은 data로 정의된 하나의 인자를 필요로 한다.
  ### 7. Callback Chaining
  (ex)
 ```javascript
-	geocode( address ,(error, data )=>{ 
+  geocode( address ,(error, data )=>{ 
 		
-		//forecast function은 geocode로 부터 data.lat과 data.long을 인자로,
+	//forecast function은 geocode로 부터 data.lat과 data.long을 인자로,
         forecast(data.lat,data.long , (error, foreCastdata) => { 
-			
 		//forecast function내부에서 geocode의 data.location 호출가능.
         console.log(data.location)
         console.log(foreCastdata)
@@ -202,7 +200,7 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
     })
 ```
  즉, 
-  Step 1) geocode 실행 통해 data(좌표) get .
+  Step 1) geocode 실행 통해 data(좌표) get .   
   Step 2) forecast 통해 날씨 정보(foreCastdata) get.
 
 ### 8. CallBack Destructuring
