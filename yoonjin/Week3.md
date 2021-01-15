@@ -2,29 +2,28 @@
 ## Section 6. Asynchronous Node.js
 ### 1.Asynchronous(비동기) basics
 
-  + 동기(Syncronous) 와 비동기(Asynchronous)
+ + 동기(Syncronous) 와 비동기(Asynchronous)
 
    	- 동기 : 결과가 주어질 때까지 아무것도 못하고 대기
    	- 비동기 : 결과가 주어지는데 걸리는 시간동안 다른 작업 수행 가능
   + 예시
 	-  code
-	```javascript
-      		console.log('Starting')
-		setTimeout(()=>{
-          	console.log('2 second timer')
-      		},2000) // run some code after a specific time passed ( fuction, millsecond)
+```javascript
+	console.log('Starting')
+	setTimeout(()=>{
+		console.log('2 second timer')
+	 },2000) // run some code after a specific time passed ( fuction, millsecond)
+console.log('Stopping')
+```
 
-		console.log('Stopping')
-	```
-    	- result
-    	>Starting     
-    	Stopping    
-    	2 second timer
+	-  result
+    > Starting     
+    Stopping    
+    2 second timer
 
   - Synchronous model : 2second를 기다린 후 program 재진행
   - Asynchronous non blocking model : 2초간 다른 코드를 실행할 수 있음.
   - 한 사용자의 데이터를 가져오는 data request의 경우, 동시에 다른 일을 수행할 수 있으므로 그러한 경우에 유용.
-
 ### 2.Call stack, Callback Queue, Event loop
 1. 예시
 	+ code
