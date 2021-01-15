@@ -13,11 +13,11 @@
 	setTimeout(()=>{
 		console.log('2 second timer')
 	 },2000) // run some code after a specific time passed ( fuction, millsecond)
-console.log('Stopping')
+	console.log('Stopping')
 ```
 
-	-  result
-    > Starting     
+
+   > Starting     
     Stopping    
     2 second timer
 
