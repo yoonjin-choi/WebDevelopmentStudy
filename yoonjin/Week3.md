@@ -26,7 +26,7 @@
 
   - Synchronous model : 2second를 기다린 후 program 재진행
   - Asynchronous non blocking model : 2초간 다른 코드를 실행할 수 있음.
-- 한 사용자의 데이터를 가져오는 data request의 경우, 동시에 다른 일을 수행할 수 있으므로 그러한 경우에 유용.
+  - 한 사용자의 데이터를 가져오는 data request의 경우, 동시에 다른 일을 수행할 수 있으므로 그러한 경우에 유용.
 
 ### 2.Call stack, Callback Queue, Event loop
 1. 예시
@@ -206,10 +206,10 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
         })
     })
 ```
- 	즉, 
- 	Step 1) geocode 실행 통해 data(좌표) get .
+ 즉, 
+  Step 1) geocode 실행 통해 data(좌표) get .
 	
- 	Step 2) forecast 통해 날씨 정보(foreCastdata) get.
+  Step 2) forecast 통해 날씨 정보(foreCastdata) get.
 
  ### 8. CallBack Destructuring
  #### 1. Object property shorthand syntax
@@ -223,9 +223,9 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
     	age : userAge,
     	location : 'Korea'
 	}
-	```
-	- object 생성 시, 일반적으로는 위와 같이 사용해옴.
-	- object property 와 variable 의 이름이 같은 경우,  shorthand syntax로 다음과 같이 사용가능.
+```
+- object 생성 시, 일반적으로는 위와 같이 사용해옴.
+- object property 와 variable 의 이름이 같은 경우,  shorthand syntax로 다음과 같이 사용가능.
 	
  ```javascript
 	const name = 'Andrew'
@@ -236,7 +236,7 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
     	userAge, //property 명 = variable 명 = userAge
     	location : 'Korea'
 	}
-	```
+```
 #### 2. Object Destructuring
 ```javascript
 	const product = {
@@ -246,20 +246,20 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
     	slaePrice : undefined
 	}
 ```
-	1. const { 사용하고자 하는 properties : label, stock } -> label, stock variable이 생성
-	```javascript
+1. const { 사용하고자 하는 properties : label, stock } -> label, stock variable이 생성
+```javascript
 	const {label, stock} = product
 	console.log( label, stock ) // print ) Red notebook, 3
 ```
 
-	2. Rename 가능 
-	```javascript
+2. Rename 가능 
+```javascript
 	const { label:productLabel, stock } =product
 	console.log(productLabel) // Red notebook
 	console.log(stock) //3
 ```
-	3.  object에 포함되지 않은 property(*rating*) 또한 variable로 생성,
-		- object에 포함되지 않은 property에 대해서는 default값(여기서 5)또한 설정 가능.
+3.  object에 포함되지 않은 property(*rating*) 또한 variable로 생성,
+ - object에 포함되지 않은 property에 대해서는 default값(여기서 5)또한 설정 가능.
 ```javascript
 	const {label:productLabel, stock, rating =5} =product
 	console.log(rating) //5
