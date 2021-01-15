@@ -193,8 +193,8 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
 	=> **geocode** 함수는 address 와 callback function을 인자로 가지고,
 	 callback function은 data로 정의된 하나의 인자를 필요로 한다.
  ### 7. Callback Chaining
- 	(ex)
-	```javascript
+ (ex)
+```javascript
 	geocode( address ,(error, data )=>{ 
 		
 		//forecast function은 geocode로 부터 data.lat과 data.long을 인자로,
@@ -208,10 +208,9 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
 ```
  즉, 
   Step 1) geocode 실행 통해 data(좌표) get .
-	
   Step 2) forecast 통해 날씨 정보(foreCastdata) get.
 
- ### 8. CallBack Destructuring
+### 8. CallBack Destructuring
  #### 1. Object property shorthand syntax
   ```javascript
 	const name = 'Andrew'
@@ -237,6 +236,7 @@ geocode('Philadelphia', (data) => { // call back 함수는 1개의 인자 필요
     	location : 'Korea'
 	}
 ```
+
 #### 2. Object Destructuring
 ```javascript
 	const product = {
