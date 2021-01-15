@@ -6,20 +6,17 @@
 
    	- 동기 : 결과가 주어질 때까지 아무것도 못하고 대기
    	- 비동기 : 결과가 주어지는데 걸리는 시간동안 다른 작업 수행 가능
-+ 예시
+  + 예시
 	-  code
-      ```javascript
-      console.log('Starting')
+	```javascript
+      		console.log('Starting')
+		setTimeout(()=>{
+          	console.log('2 second timer')
+      		},2000) // run some code after a specific time passed ( fuction, millsecond)
 
-      setTimeout(()=>{
-          console.log('2 second timer')
-      },2000) // run some code after a specific time passed ( fuction, millsecond)
-
-
-
-    	console.log('Stopping')
+		console.log('Stopping')
 ```
-    (result)   
+    - result
     >Starting     
     Stopping    
     2 second timer
