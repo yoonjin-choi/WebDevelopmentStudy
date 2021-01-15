@@ -15,11 +15,11 @@
       		},2000) // run some code after a specific time passed ( fuction, millsecond)
 
 		console.log('Stopping')
-```
-    - result
-    >Starting     
-    Stopping    
-    2 second timer
+	```
+    	- result
+    	>Starting     
+    	Stopping    
+    	2 second timer
 
   - Synchronous model : 2second를 기다린 후 program 재진행
   - Asynchronous non blocking model : 2초간 다른 코드를 실행할 수 있음.
