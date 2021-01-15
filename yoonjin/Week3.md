@@ -126,32 +126,31 @@
 - network에 연결되어 있지 않다면 error이 value를 가지고 , response는 가지지 않음.
 - 반대로 reponse가 값을 가진다면, error은 가지지 않음.
 - code
-	```javascript
+```javascript
 	request({ url:geocode_url, json:true },( error,response)=> {
-    //error code
+    	//error code
 	if (error){ 
         console.log('Unable to connect to geocoding service.')
-    }
+    	}
 	//response
-    else{
-    }
-})
+    	else{}
+	})
 ```
 2. URL Error
 - URL 이 필요로 하는 query를 모두 입력받지 못했을 경우,
-  response의 body값을 받지만 error-> url 직접 입력해본 후 error 처리
+  response의 body값을 받지만 error발생 -> url 직접 입력해본 후 error 처리
 -(ex)
-`````javascript
-request({ url:geocode_url, json:true },(error,response)=> {
-    if (error){ // error in low level OS
-        console.log('Unable to connect to geocoding service.')
-    } else if(response.body.message){ //잘못된 url
-        console.log('Unable to find location')
-    }
-    else{
-    }
+```javascript
+    request({ url:geocode_url, json:true },(error,response)=> {
+    	if (error){ // error in low level OS
+        	console.log('Unable to connect to geocoding service.')
+    	} else if(response.body.message){ //잘못된 url
+        	console.log('Unable to find location')
+    	}
+    	else{
+    	}
 	})
-`````
+```
 ### 6. Callback Function
 - 콜백함수는 함수(A)의 인자로 또 다른 함수(B)를 전달하여 , A함수 내부에서 B함수를 실행시키는 것.  <br>
 
