@@ -8,18 +8,18 @@
    	- 비동기 : 결과가 주어지는데 걸리는 시간동안 다른 작업 수행 가능
   + 예시
 	-  code
-```javascript
+	```javascript
 	console.log('Starting')
 	setTimeout(()=>{
 		console.log('2 second timer')
 	 },2000) // run some code after a specific time passed ( fuction, millsecond)
 	console.log('Stopping')
-```
+	```
 
-
-   > Starting     
-    Stopping    
-    2 second timer
+	- result
+   	> Starting     
+    	 Stopping    
+    	 2 second timer
 
   - Synchronous model : 2second를 기다린 후 program 재진행
   - Asynchronous non blocking model : 2초간 다른 코드를 실행할 수 있음.
@@ -40,17 +40,17 @@
 	 	},0)
 	 	
 	 	console.log('Stopping')
-```
+		```
 	+ result)   
 		
 		>Starting     
-
- 		Stopping  
- 	    0 second timer   
+		Stopping  
+ 	    	0 second timer   
  		2 second time
  	    <br>
  	    
  	   <img src="./img/asynchronous.PNG" width="700px" height="450px"  ></img>
+  
   2. Call stack
 	  + V8과 javaScript engine에 의해 제공되는 간단한 데이터 structure.
 	  + 실행되고 있는 모든 함수들을 지속적으로 관리하는 곳
